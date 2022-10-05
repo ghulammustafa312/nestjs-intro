@@ -28,7 +28,7 @@ export class ProductsService {
 
   async deleteProduct(id) {
     return await this.productModel.updateOne(
-      { _id: id },
+      { _id: id, deletedCheck: false },
       { deletedCheck: true },
     );
   }
